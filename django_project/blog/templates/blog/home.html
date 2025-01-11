@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section" style="background-color: #ffe6e6; border: 2px solid #ff9999;">
+          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-posts' post.author.username %}" style="color: #cc0000; font-weight: bold;">{{ post.author }}</a>
+              <small class="text-muted" style="color: #660000;">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}" style="color: #990000; font-size: 1.8rem;">{{ post.title }}</a></h2>
+            <p class="article-content" style="color: #333333;">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+    {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-danger mb-4" href="?page=1" style="color: #e60000; border-color: #e60000;">First</a>
+        <a class="btn btn-outline-danger mb-4" href="?page={{ page_obj.previous_page_number }}" style="color: #e60000; border-color: #e60000;">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-danger mb-4" href="?page={{ num }}" style="background-color: #e60000; color: #ffffff;">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-danger mb-4" href="?page={{ num }}" style="color: #e60000; border-color: #e60000;">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-danger mb-4" href="?page={{ page_obj.next_page_number }}" style="color: #e60000; border-color: #e60000;">Next</a>
+        <a class="btn btn-outline-danger mb-4" href="?page={{ page_obj.paginator.num_pages }}" style="color: #e60000; border-color: #e60000;">Last</a>
+      {% endif %}
+
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,109 @@
+/* General body styles */
+body {
+  background: #f9f9f9; /* Slightly lighter background for subtlety */
+  color: #333333;
+  margin-top: 5rem;
+  font-family: 'Arial', sans-serif; /* Updated for better readability */
+}
+
+/* Header styles */
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+  margin-bottom: 0.5rem;
+}
+
+/* Reset unordered list margins */
+ul {
+  margin: 0;
+}
+
+/* Navbar background color */
+.bg-steel {
+  background-color: #5f788a;
+}
+
+/* Navbar link styles */
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db; /* Muted text */
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff; /* White on hover */
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500; /* Slightly bold for emphasis */
+}
+
+/* Content section styles */
+.content-section {
+  background: #ffffff;
+  padding: 15px 25px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Article title styles */
+.article-title {
+  color: #444444;
+  font-size: 1.5rem;
+}
+
+a.article-title:hover {
+  color: #428bca; /* Slight blue hover effect */
+  text-decoration: none;
+}
+
+/* Article content formatting */
+.article-content {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+/* Article image styles */
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+  border-radius: 50%; /* Circular images */
+  object-fit: cover; /* Proper image scaling */
+}
+
+/* Article metadata */
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* SVG icon sizes */
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+/* Account image styles */
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+  border-radius: 50%; /* Circular profile image */
+  object-fit: cover;
+  border: 2px solid #dddddd; /* Thin border for clarity */
+}
+
+/* Account heading styles */
+.account-heading {
+  font-size: 2.5rem;
+  color: #333333;
+  font-weight: 600;
+}
